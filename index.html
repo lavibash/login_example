@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple login</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js">
+        $(document).ready(function(){
+            $("#simple_click").click(function(){
+                $.post("http://localhost:3000/login", {user:user, password:password},function(data){
+                    if(data==='done'){
+                        alert("login success");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>hello people!</h1>
+    <input type="TEXT" name="user" size="40"><br>
+    <input type="password" name="password" size="40"><br>
+    <input type="button" name="simple_click" value="Submit">
+</body>
+</html>
